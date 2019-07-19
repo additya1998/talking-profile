@@ -9,34 +9,38 @@
 
 ## Datasets
 	- [FaceForensics++](https://github.com/ondyari/FaceForensics)
-		```shell
+```shell
 		python download-FaceForensicspp.py
 		    <output path>
 		    -d <dataset type, e.g., Face2Face, original or all>
 		    -c <compression quality, e.g., c23 or raw>
 		    -t <file type, e.g., images, videos, masks or models> 
-		```
+```		
 
 	- Barack Obama
-		```shell
+```shell
 		cd talking-profile/datasets/Obama
 		python download.py
-		``` 
+``` 
 
 	- Donald Trump
-		```shell
+```shell
 		cd talking-profile/datasets/Trump
 		python download.py
-		``` 
+``` 
 
 ## Feature Extraction
 	- Build [Openface](https://github.com/TadasBaltrusaitis/OpenFace) at talking-profile/src/feature_extractors
 	- Extraction
-		```shell
+```shell
 		python talking-profile/feature_extractors/extract_features.py --source_dir <source_video_director> --dest_dir <output_directory>
-		```
+```
 
 ## Classification
+
+```shell
+	python talking-profile/src/svm/code.py
+```
 	- au_features - takes the file path and of a video and returns the AU features extracted by Openface for each frame of the video 	
 	- face_features - takes the file path and of a video and returns the following features extracted by Openface for each frame of the video
 		- Location of the head with respect to camera in millimeters.  
@@ -51,3 +55,4 @@
 		- fgap : used to control the number of frames to skip between two selected frames for one talking profile feature vector
 		- feature_subset : use only a subset of features   
 	- get_classifier - returns a classifier (simple SVM or AdaBoost) for the input training data
+

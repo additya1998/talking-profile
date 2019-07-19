@@ -4,7 +4,7 @@
 
 	- src/
   	  - feature_extractors/
-	    - svm/
+	  - svm/
 	- datasets/
 	- features/
 
